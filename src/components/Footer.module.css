@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: var(--space-small);
+}
+
+.tagButton {
+  margin: 0 var(--space-x-small);
+}
+
+.stopButton {
+  background-color: var(--red400);
+  color: var(--white);
+  margin-right: var(--space-small);
+}
+
+.locateButton {
+  background-color: var(--blue400);
+  color: var(--white);
+}

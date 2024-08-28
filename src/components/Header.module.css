@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-small);
+    background-color: var(--indigo50);
+    border-bottom: 1px solid var(--indigo100);
+  }
+  
+  .stopButton {
+    background-color: var(--red400);
+    color: var(--white);
+  }
+  
+  .locateButton {
+    background-color: var(--blue400);
+    color: var(--white);
+  }
