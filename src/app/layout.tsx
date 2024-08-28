@@ -1,46 +1,26 @@
-import React, {PropsWithChildren} from 'react';
-import Image from 'next/image';
-import Script from 'next/script';
+import React, { PropsWithChildren } from "react";
+import Script from "next/script";
+import { MiroSDKInit } from "../components/SDKInit";
 
-import congratulations from '../assets/congratulations.png';
-import {SDKUsageDemo} from '../components/SDKUsageDemo';
-import {MiroSDKInit} from '../components/SDKInit';
-
-export default function RootLayout({children}: PropsWithChildren) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html>
+      <head>
+        <link href="https://cdn.jsdelivr.net/npm/preline@1.0.0/dist/preline.min.css" rel="stylesheet" />
+      </head>
       <body>
         <Script
           src="https://miro.com/app/static/sdk/v2/miro.js"
           strategy="beforeInteractive"
         />
+        <Script
+          src="https://cdn.jsdelivr.net/npm/preline@1.0.0/dist/preline.min.js"
+          strategy="afterInteractive"
+        />
         <MiroSDKInit />
         <div id="root">
           <div className="grid">
-            <div className="cs1 ce12">
-              <Image src={congratulations} alt="" />
-              <h1>Congratulations!</h1>
-              <p>You've just created your first Miro app!</p>
-            </div>
-            <div className="cs1 ce12">
-              <SDKUsageDemo />
-            </div>
-            <hr className="cs1 ce12" />
             <div className="cs1 ce12">{children}</div>
-            <hr className="cs1 ce12" />
-            <div className="cs1 ce12">
-              <p>
-                To explore more and build your own app, see the Miro Developer
-                Platform documentation.
-              </p>
-              <a
-                className="button button-secondary"
-                target="_blank"
-                href="https://developers.miro.com"
-              >
-                Read the documentation
-              </a>
-            </div>
           </div>
         </div>
       </body>
