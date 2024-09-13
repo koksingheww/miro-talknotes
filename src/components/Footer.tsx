@@ -7,6 +7,7 @@ interface FooterProps {
   onStartRecording: () => void;
   onStopRecording: () => void;
   onLocateText: () => void;
+  onCreateStickyNote: () => void;
 }
 
 const Footer: React.FC<FooterProps> = ({
@@ -14,27 +15,22 @@ const Footer: React.FC<FooterProps> = ({
   onStartRecording,
   onStopRecording,
   onLocateText,
+  onCreateStickyNote,
 }) => {
   return (
     <div className={styles.footer}>
       {!isRecording ? (
         <>
-          {/* this is the record button */}
           <Button size="large" variant="primary" onClick={onStartRecording}>
             <Icon name="mic-on" />
           </Button>
-          {/* <Tag className={styles.tagButton}>
-            <TagButton icon="activity" />
-            <Text>Ask AI</Text>
-          </Tag>
-          <Tag className={styles.tagButton}>
-            <TagButton icon="star" />
-            <Text>Brainstorm ideas</Text>
-          </Tag>
-          <Tag className={styles.tagButton}>
-            <TagButton icon="edit" />
-            <Text>Draft an outline</Text>
-          </Tag> */}
+          {/* Add the new button here */}
+          <Button
+            onClick={onCreateStickyNote}
+            className={styles.stickyNoteButton}
+          >
+            Create Sticky Note
+          </Button>
         </>
       ) : (
         <>

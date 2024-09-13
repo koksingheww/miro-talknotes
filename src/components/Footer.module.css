@@ -18,3 +18,9 @@
   background-color: var(--blue400);
   color: var(--white);
 }
+
+.stickyNoteButton {
+  background-color: var(--yellow400);
+  color: var(--black);
+  margin-left: var(--space-small);
+}
